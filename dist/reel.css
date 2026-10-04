@@ -1,6 +1,7 @@
 /* The reel is drawn at device resolution; layout and controls remain native HTML. */
+.hero-creative { min-height: 900px; }
 .hero-art.reel-art {
-  width: 65%; right: -10%; top: 135px; aspect-ratio: 900 / 650;
+  width: 65%; max-width: 1000px; right: -10%; top: 110px; aspect-ratio: 900 / 650;
   transform: none; transition: none; pointer-events: auto;
 }
 .reel-canvas, .reel-poster { display: block; width: 100%; height: 100%; }
@@ -9,14 +10,14 @@
 .reel-art[data-ready] .reel-poster { visibility: hidden; }
 .hero-art .reel-poster { filter: none; }
 .reel-caption {
-  position: absolute; left: 22%; bottom: 5%; display: flex; align-items: center;
+  position: absolute; left: 22%; top: 5%; display: flex; align-items: center;
   gap: 11px; color: var(--brand-ink, #25253d); font: 11px var(--mono);
   letter-spacing: .015em;
 }
 .reel-caption::before { content: ''; width: 6px; height: 6px; background: var(--brand); border-radius: 50%; }
 .reel-caption span { color: var(--muted); }
 .reel-control {
-  position: absolute; right: 23%; bottom: 3%; display: flex; align-items: center;
+  position: absolute; right: 23%; top: 3%; display: flex; align-items: center;
   justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 0 12px;
   color: var(--ink); background: #ffffffa6; border: 1px solid #25253d24;
   border-radius: var(--radius-control); font-size: 11px; cursor: pointer;
@@ -28,7 +29,7 @@
 .reel-control[aria-pressed="true"] .reel-play { display: block; }
 .reel-control[aria-pressed="true"] .reel-pause { display: none; }
 .hero-coordinate { display: none; }
-.hero-finder { transform: none; right: 7%; }
+.hero-finder { transform: none; right: 7%; bottom: 90px; }
 @media (min-width: 1650px) {
   .hero-art.reel-art { width: 62%; right: -6%; top: 130px; }
 }
@@ -43,10 +44,10 @@
     position: relative; width: 112%; left: -6%; right: auto; top: auto;
     margin: -12px 0 6px; transform: none;
   }
-  .reel-caption { left: 13%; bottom: 3%; font-size: 10px; }
+  .reel-caption { left: 13%; top: auto; bottom: 3%; font-size: 10px; }
   .reel-caption span { display: none; }
-  .reel-control { right: 13%; bottom: 0; }
-  .hero-finder { right: auto; margin-top: 20px; }
+  .reel-control { right: 13%; top: auto; bottom: 0; }
+  .hero-finder { right: auto; bottom: auto; margin-top: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-creative .hero-copy { animation: none; }

@@ -26,6 +26,7 @@ try:
             page.on('pageerror', lambda error: errors.append(str(error)))
             page.goto(url, wait_until='networkidle')
             page.wait_for_selector('.reel-art[data-ready]')
+            page.locator('.hero').screenshot(path=str(OUT / f'{name}-initial.png'))
             button = page.get_by_role('button', name='Pause reel animation')
             button.click()
             page.wait_for_function("document.querySelector('.reel-art').dataset.motion === 'paused'")
