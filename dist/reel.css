@@ -24,7 +24,7 @@
 }
 .reel-control[hidden] { display: none; }
 .reel-control:hover { background: white; border-color: var(--brand); }
-.reel-control svg { width: 12px; height: 12px; fill: currentColor; }
+.reel-control svg { width: 12px; height: 12px; fill: currentColor; stroke: none; }
 .reel-control .reel-play { display: none; }
 .reel-control[aria-pressed="true"] .reel-play { display: block; }
 .reel-control[aria-pressed="true"] .reel-pause { display: none; }
