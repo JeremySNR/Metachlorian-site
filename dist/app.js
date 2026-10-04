@@ -31,5 +31,3 @@ renderShots();
 
 const heroForm=document.querySelector('#hero-search-form');
 heroForm?.addEventListener('submit',e=>{e.preventDefault();filter4k.checked=false;filterLong.checked=false;filterRights.checked=false;queryInput.value=document.querySelector('#hero-query').value;renderShots();document.querySelector('#demo').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});queryInput.focus({preventScroll:true});});
-const heroArt=document.querySelector('.hero-art');
-if(heroArt&&matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches){document.querySelector('.hero').addEventListener('pointermove',e=>{const box=e.currentTarget.getBoundingClientRect();heroArt.style.setProperty('--move-x',`${((e.clientX-box.left)/box.width-.5)*16}px`);heroArt.style.setProperty('--move-y',`${((e.clientY-box.top)/box.height-.5)*12}px`);});document.querySelector('.hero').addEventListener('pointerleave',()=>{heroArt.style.setProperty('--move-x','0px');heroArt.style.setProperty('--move-y','0px');});}
