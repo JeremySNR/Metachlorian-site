@@ -15,6 +15,8 @@ Open `http://127.0.0.1:4173`. There is no framework install or build step. `dist
 ```sh
 python3 scripts/check-site.py
 node --check dist/app.js
+python3 design-system/build.py --output dist/foundations.css --check
+python3 design-system/verify.py
 ```
 
 The static checker verifies internal links and anchors, assets, heading counts, IDs, metadata, JSON-LD and the XML sitemap. Browser checks cover mobile/desktop layouts, search and rights filters, empty-state recovery, shot dialogs, keyboard-operated installation tabs, copy feedback, FAQ disclosure and guide navigation.
@@ -61,3 +63,10 @@ Bricolage Grotesque and DM Sans are bundled under the SIL Open Font License; ful
 - [Google Search developer guidance](https://developers.google.com/search/docs/fundamentals/get-started-developers): crawlable content, descriptive metadata and structured information.
 
 These are design references, not measured claims about those sites' conversion rates, search rankings or performance. The layout, copy and generated art are original to this website.
+
+
+## Family identity and design system
+
+The approved logo is installed in the header/footer of all three pages. Its SVG embeds the original PNG unchanged; the compact mark and favicon use the same artwork with different viewports. See [the family design system](design-system/README.md) for exact-source verification, semantic tokens, marketing/library/editor profiles, accessibility contracts, component guidance and adoption in Metachlorian and Cutawan.
+
+`dist/foundations.css` is generated from `design-system/tokens.json`. `dist/tokens.css` adapts those foundations for this site; `dist/family.css` applies shared identity and component rules. Keep these styles on generated guide pages by editing `scripts/generate-guides.py` as well.

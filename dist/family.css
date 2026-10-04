@@ -1,0 +1,86 @@
+/* Family rules applied across the homepage and both generated guides. */
+body { font-size: var(--family-type-body); }
+.brand { min-height: var(--family-size-target-touch); }
+.brand-logo { display: block; position: relative; overflow: hidden; width: 250px; aspect-ratio: 1766 / 259; flex-shrink: 0; }
+.brand-logo img { position: absolute; max-width: none; width: 122.99%; height: auto; left: -12.2877%; top: -84.9421%; }
+.brand-mark, .brand-mark i { display: none; }
+.site-footer .brand { color: var(--ink); }
+.header .brand { letter-spacing: normal; }
+.header { gap: var(--family-space-6); }
+.header nav { gap: var(--family-space-6); }
+.header nav a { min-height: var(--family-size-target-touch); display: inline-flex; align-items: center; }
+.header .button-glass, .button, .menu-toggle { border-radius: var(--radius-control); }
+.button, .hero-finder button, .demo-search button { min-height: var(--family-size-marketing-control); transition: background var(--duration-control) var(--ease), color var(--duration-control) var(--ease); }
+.button-wine, .closing { background: var(--brand); }
+.button-wine:hover, .demo-search button:hover, .hero-finder button:hover { background: var(--brand-hover); }
+.button-wine:active, .demo-search button:active, .hero-finder button:active { background: var(--brand-pressed); }
+.button-white { color: var(--brand); }
+.button-outline, .header .button-glass, .menu-toggle { border-color: var(--border-control); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.trust-strip { background: var(--ink); }
+.hero-creative, .guide-page .header, .guide-hero, .guide-cta { background: var(--surface-brand); }
+.hero-creative, .header, .hero-creative .hero-description { color: var(--ink); }
+.hero-small, .hero-finder-caption { color: var(--muted); }
+.demo-window, .screenshot-button, .agent-conversation, .rights-example, .guide-card, dialog { border-radius: var(--radius-dialog); }
+.demo-window { border-color: var(--line); box-shadow: var(--shadow-panel); }
+.demo-toolbar, .demo-sidebar, .mini-timeline, .transcript-sample, .evidence-sample, .install-section { background: var(--wash); }
+.demo-main, .shot-card, .rights-example, .install-code { background: var(--paper); }
+.sidebar-selected { background: var(--family-color-neutral-canvas); }
+.demo-badge { background: var(--surface-selected); color: var(--brand); }
+.sample-queries button { min-height: var(--family-size-target-touch); background: var(--wash); border-color: var(--border-control); color: var(--ink); font-size: var(--family-type-control); }
+.sample-queries button:hover { background: var(--family-color-neutral-canvas); }
+.sidebar-heading, .check-control, .reset-filters { font-size: var(--family-type-control); }
+.check-control { min-height: var(--family-size-target-touch); }
+.check-control input { accent-color: var(--brand); }
+.demo-search { border-color: var(--border-control); border-radius: var(--radius-control); }
+.demo-search:focus-within { outline: 2px solid var(--focus); outline-offset: 3px; }
+.demo-search button { background: var(--brand); border-radius: var(--radius-control); }
+.shot-card { border-radius: var(--radius-control); }
+.shot-thumb { border-radius: var(--radius-control); background: var(--family-color-neutral-dark-panel); }
+.shot-title { font-size: var(--family-type-control); }
+.shot-reason { font-size: var(--family-type-metadata); }
+.shot-duration, #detail-signals, .transcript-sample>span, .frame-index span:last-child, code, pre { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.shot-rights { color: var(--status-cleared); background: var(--status-cleared-bg); font-size: var(--family-type-metadata); }
+.shot-rights.restricted { color: var(--status-caution); background: var(--status-caution-bg); }
+.rights-section { background: var(--wash); }
+.rights-layout>div>p { color: var(--muted); }
+.rights-verdict { background: var(--status-cleared-bg); color: var(--status-cleared); }
+.rights-check { color: var(--status-cleared); }
+.rights-example { transform: none; border-color: var(--line); box-shadow: var(--shadow-panel); }
+.transcript-sample mark, .evidence-sample>div:last-child strong { color: var(--brand); background: var(--surface-selected); }
+.agents-section { background: var(--family-color-neutral-dark-panel); }
+.agents-layout .section-label, .agent-tool { color: var(--family-color-brand-violet-on-dark); }
+.agents-layout>div>p, .agent-request p, .agent-response p { color: var(--family-color-neutral-dark-text); }
+.agents-layout .agents-note, .agent-request>span, .agent-response>span, .agent-caption { color: var(--family-color-neutral-dark-muted); }
+.copy-code, .file-icon { color: var(--brand); background: var(--surface-selected); border-radius: var(--radius-control); }
+.guide-article pre, .guide-article p code, .guide-article li code, .guide-card { background: var(--wash); }
+.guide-card:hover { background: var(--surface-selected); }
+.guide-article pre { font-size: var(--family-type-control); }
+.dialog-close { min-height: var(--family-size-target-touch); min-width: var(--family-size-target-touch); }
+.closing { --focus: var(--family-color-neutral-white); }
+.agents-section { --focus: var(--family-color-neutral-white); }
+@media (max-width: 1100px) {
+  .brand-logo { width: 226px; }
+  .header nav { gap: var(--family-space-4); }
+  .header-cta { display: none; }
+}
+@media (max-width: 780px) {
+  .brand-logo { width: 220px; }
+  .header { gap: var(--family-space-3); }
+  .header .menu-toggle { min-height: var(--family-size-target-touch); border-radius: var(--radius-control); }
+  .hero-finder input { font-size: var(--family-type-control); }
+  .hero-finder-caption { font-size: var(--family-type-metadata); }
+  .hero-small { font-size: var(--family-type-metadata); }
+  .hero-creative .hero-description { font-size: var(--family-type-body); }
+  .demo-sidebar { flex-wrap: wrap; }
+  .guide-article pre { font-size: var(--family-type-metadata); }
+}
+@media (max-width: 380px) {
+  .brand-logo { width: 192px; }
+  .header { padding-inline: 5%; }
+}
+@media (forced-colors: active) {
+  .brand-logo img { visibility: hidden; }
+  .brand-logo::after { content: 'Metachlorian'; font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: CanvasText; }
+  .button, .demo-search button, .hero-finder button { border: 1px solid ButtonText; }
+}

@@ -1,0 +1,37 @@
+/* Marketing profile. Family foundation names stay identical in all three repos. */
+:root {
+  color-scheme: light;
+  --ink: var(--family-color-brand-ink);
+  --muted: var(--family-color-neutral-muted);
+  --paper: var(--family-color-neutral-white);
+  --wash: var(--family-color-neutral-paper);
+  --line: var(--family-color-neutral-line);
+  --brand: var(--family-color-brand-violet);
+  --brand-hover: var(--family-color-brand-violet-hover);
+  --brand-pressed: var(--family-color-brand-violet-pressed);
+  --wine: var(--brand); /* Compatibility alias for the existing button classes. */
+  --teal: var(--family-color-neutral-dark-panel);
+  --heading: 'Bricolage Grotesque', Arial, sans-serif;
+  --body: 'DM Sans', system-ui, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --surface-brand: var(--family-color-brand-tint);
+  --surface-selected: #eee9ff;
+  --border-control: #6e6e6e;
+  --focus: var(--family-color-neutral-ink);
+  --status-cleared: var(--family-color-status-cleared);
+  --status-cleared-bg: var(--family-color-status-cleared-bg);
+  --status-caution: var(--family-color-status-caution);
+  --status-caution-bg: var(--family-color-status-caution-bg);
+  --radius-control: var(--family-radius-control);
+  --radius-dialog: var(--family-radius-dialog);
+  --duration-control: var(--family-motion-control);
+  --duration-panel: var(--family-motion-panel);
+  --ease: cubic-bezier(.2, 0, 0, 1);
+  --shadow-panel: 0 16px 48px rgb(20 20 20 / .12);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --duration-control: 0ms; --duration-panel: 0ms; }
+}
+@media (forced-colors: active) {
+  :root { --focus: Highlight; --border-control: ButtonText; }
+}
