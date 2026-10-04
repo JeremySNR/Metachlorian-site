@@ -18,3 +18,21 @@ jobs:
       - run: python3 design-system/verify.py
       - run: python3 scripts/check-site.py
       - run: node --check dist/app.js
+      - run: node --check dist/reel.js
+  browser:
+    name: Animated hero browser review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/check-reel-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reel-browser-review
+          path: .tmp/reel-review/
+          if-no-files-found: ignore

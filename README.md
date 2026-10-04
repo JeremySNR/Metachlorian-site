@@ -45,10 +45,9 @@ The Sites deployment starts private. Search-engine indexing requires a public la
 
 The built-in image-generation tool produced these original assets:
 
-- `dist/assets/frame-ribbon-1536.webp` and `frame-ribbon-800.webp`: photorealistic gallery sculpture of eight connected cinematic photographic frames curling into an S curve. Golden Atlantic coast, alpine mountains, forest, red neon city, ocean foam, dunes, sunset silhouette and misty coastline; slim silver/black borders, transparent background, soft shadow, no text or UI.
 - `dist/assets/coast-1600.webp` and `coast-800.webp`: cinematic aerial photograph of a rugged Atlantic coastline at golden hour, dark teal ocean, warm sunlit cliffs, photographic texture and subtle film grain; no people, text, UI, logos or watermark.
 
-The source PNGs remain in the local generated-images library; all assets needed by the website are included here. The ribbon follows the user's request for a more creative hero. CSS gives the artwork a small pointer-responsive movement, disabled for reduced-motion users.
+The hero reel is now drawn in `dist/reel.js`: a projected film loop with five original code-drawn landscapes, perspective-correct mesh strips, a fixed focus aperture, and subtle pointer response. It needs no external images or runtime dependencies. A visible pause/play control, reduced-motion default, offscreen/hidden-tab suspension, and a static `reel-poster.webp` fallback cover accessibility and resource use. The illustrative coastal stills elsewhere in the demo remain generated imagery.
 
 `dist/assets/search-interface.webp` is optimised from `review/m4/screens/01-search-results--desktop-light.jpg` in the Apache-2.0-licensed product repository. See [the product licence](https://github.com/JeremySNR/Metachlorian/blob/HEAD/LICENSE).
 
@@ -70,3 +69,7 @@ These are design references, not measured claims about those sites' conversion r
 The approved logo is installed in the header/footer of all three pages. Its SVG embeds the original PNG unchanged; the compact mark and favicon use the same artwork with different viewports. See [the family design system](design-system/README.md) for exact-source verification, semantic tokens, marketing/library/editor profiles, accessibility contracts, component guidance and adoption in Metachlorian and Cutawan.
 
 `dist/foundations.css` is generated from `design-system/tokens.json`. `dist/tokens.css` adapts those foundations for this site; `dist/family.css` applies shared identity and component rules. Keep these styles on generated guide pages by editing `scripts/generate-guides.py` as well.
+
+### Animated hero verification
+
+`python scripts/check-reel-browser.py` exercises the animation and hero search at desktop/mobile sizes, pause/resume, offscreen suspension, reduced motion, keyboard control and the no-JavaScript poster. It requires Playwright 1.55.0 and Chromium. CI saves screenshots as `reel-browser-review` for visual review. The poster is rendered from the same `createRenderer` exported by `dist/reel.js`, at 1800 × 1300.
