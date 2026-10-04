@@ -53,7 +53,8 @@ try:
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(url, wait_until='networkidle')
         page.wait_for_selector('.reel-art[data-ready]')
-        control = page.get_by_role('button', name='Play reel animation')
+        control = page.locator('.reel-control')
+        assert control.get_attribute('aria-label') == 'Play reel animation'
         assert control.get_attribute('aria-pressed') == 'true'
         before = page.locator('canvas').evaluate('(c) => c.toDataURL()')
         page.wait_for_timeout(350)
