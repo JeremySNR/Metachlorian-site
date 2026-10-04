@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metachlorian.jezalexandersmith.chatgpt.site/sitemap.xml
