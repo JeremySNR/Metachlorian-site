@@ -27,6 +27,7 @@ The static checker verifies internal links and anchors, assets, heading counts, 
 - `scripts/generate-guides.py`: guide content and generation; updates the two guide pages and crawl files. Run after updating shared navigation or guide content.
 - `dist/guides/`: crawlable self-hosting and MCP guides.
 - `.openai/hosting.json`: Sites identity and static hosting configuration.
+- `vercel.json`: Vercel configuration; serves `dist/` with no build step and applies the same headers as `dist/_headers`.
 
 The demo uses six illustrative records and generated still imagery. It does not connect to a running Metachlorian backend, analyse uploads, or imply real permissions. The product screenshot is from the actual repository. Product facts and commands were checked against commit `2d07f6f9743848c526d66b106fb4d9cba8ea8bcb` on 4 October 2026.
 
