@@ -84,3 +84,43 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .brand-logo::after { content: 'Metachlorian'; font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: CanvasText; }
   .button, .demo-search button, .hero-finder button { border: 1px solid ButtonText; }
 }
+
+/* Clear search positioning and a direct desktop download path. */
+.hero-creative .hero-copy { max-width: 760px; padding-top: 190px; }
+.hero-creative h1 { font-size: clamp(54px, 5.1vw, 82px); line-height: 1.03; letter-spacing: -.055em; white-space: normal; }
+.hero-creative .hero-description { max-width: 460px; }
+.hero-source-link { display: inline-block; font-size: 13px; margin-top: 17px; text-underline-offset: 4px; text-decoration: underline; }
+.desktop-downloads { padding-bottom: 15px; }
+.download-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+.download-heading h3 { font-size: 38px; letter-spacing: -.04em; margin-top: 12px; }
+.download-heading > a, .download-note a, .privacy-note a { text-decoration: underline; text-underline-offset: 3px; color: var(--brand); }
+.download-heading > a { font-size: 14px; }
+.download-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.download-card { display: flex; flex-direction: column; gap: 13px; padding: 27px; border: 1px solid var(--border-control); border-radius: var(--radius-dialog); background: var(--paper); transition: background .15s; }
+.download-card:hover { background: var(--surface-selected); border-color: var(--brand); }
+.download-card strong { font-family: var(--heading); font-size: 27px; font-weight: 550; }
+.download-card span { color: var(--brand); font-weight: 600; font-size: 15px; }
+.download-card small { color: var(--muted); font-size: 13px; }
+.download-note { color: var(--muted); font-size: 13px; line-height: 1.7; margin-top: 22px; max-width: 950px; }
+.desktop-downloads + .install-layout { padding-top: 45px; }
+.ownership-copy > .privacy-note { font-size: 15px; line-height: 1.7; margin-top: 22px; }
+.guide-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-card h3 { font-size: 27px; }
+@media (max-width: 1100px) and (min-width: 781px) {
+  .hero-creative .hero-copy { max-width: 600px; }
+  .hero-creative h1 { font-size: 60px; }
+  .guide-card { padding: 25px; }
+}
+@media (max-width: 780px) {
+  .hero-creative .hero-copy { padding-top: 130px; }
+  .hero-creative h1 { font-size: clamp(42px, 7.5vw, 60px); }
+  .hero-creative .hero-description { max-width: 490px; }
+  .download-heading { display: block; }
+  .download-heading > a { display: inline-block; margin-top: 18px; }
+  .download-heading h3 { font-size: 32px; }
+  .download-grid, .guide-cards { grid-template-columns: 1fr; }
+  .download-card { padding: 24px; gap: 10px; }
+  .desktop-downloads + .install-layout { padding-top: 30px; }
+  .hero-creative .hero-actions { gap: 20px; flex-wrap: wrap; }
+}
+@media (max-width: 390px) { .hero-creative h1 { font-size: 39px; } }

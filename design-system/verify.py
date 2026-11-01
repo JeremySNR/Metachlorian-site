@@ -54,11 +54,12 @@ for name in ('metachlorian-logo.svg', 'metachlorian-mark.svg', 'favicon.svg'):
 assert ET.parse(ROOT / 'dist/assets/metachlorian-logo.svg').getroot().attrib['viewBox'] == '0 0 2172 724'
 print('Master SHA-256:', hashlib.sha256(master).hexdigest())
 
-for page in (ROOT / 'dist').rglob('*.html'):
-    source = page.read_text()
+pages = list((ROOT / 'dist').rglob('index.html'))
+for page in pages:
+    source = page.read_text(encoding='utf-8')
     for css in ('foundations.css', 'tokens.css', 'styles.css', 'family.css'):
         assert f'href="/{css}"' in source, f'{page}: missing {css}'
     assert source.count('src="/assets/metachlorian-logo.svg"') == 2, f'{page}: inconsistent header/footer identity'
     assert 'href="/assets/favicon.svg"' in source
     assert 'class="brand-mark"' not in source
-print('PASS: all three pages use the same SVG identity and profile styles')
+print(f'PASS: all {len(pages)} pages use the same SVG identity and profile styles')

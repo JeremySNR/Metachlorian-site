@@ -1,6 +1,8 @@
 # Metachlorian website
 
-A static, responsive marketing site for [Metachlorian](https://github.com/JeremySNR/Metachlorian), with an illustrated cinematic hero, local sample-library interactions, actual product screenshots, and two technical guides.
+A static, responsive marketing site for [Metachlorian](https://github.com/JeremySNR/Metachlorian), with direct desktop downloads, an illustrated cinematic hero, local sample-library interactions, actual product screenshots, and three practical guides.
+
+Production origin: **https://www.metachlorian.xyz**. The apex domain redirects to this primary hostname in Vercel.
 
 ## Run locally
 
@@ -16,30 +18,32 @@ Open `http://127.0.0.1:4173`. There is no framework install or build step. `dist
 python3 scripts/check-site.py
 node --check dist/app.js
 python3 design-system/build.py --output dist/foundations.css --check
-python3 design-system/verify.py
+python3 -X utf8 design-system/verify.py
 ```
 
-The static checker verifies internal links and anchors, assets, heading counts, IDs, metadata, JSON-LD and the XML sitemap. Browser checks cover mobile/desktop layouts, search and rights filters, empty-state recovery, shot dialogs, keyboard-operated installation tabs, copy feedback, FAQ disclosure and guide navigation.
+The static checker verifies internal links and anchors, assets, heading counts, IDs, unique titles/descriptions, self-referencing production canonicals, Open Graph URLs, social preview images, JSON-LD and exact sitemap coverage. Root ownership-verification files are not treated as indexable content pages. Browser checks cover mobile/desktop layouts, search and rights filters, empty-state recovery, shot dialogs, keyboard-operated installation tabs, copy feedback, FAQ disclosure and guide navigation.
 
 ## Content and editing
 
 - `dist/index.html`: landing page and structured data.
 - `dist/styles.css`: shared responsive styles.
 - `dist/app.js`: deterministic sample-library demo and small interface interactions.
-- `scripts/generate-guides.py`: guide content and generation; updates the two guide pages and crawl files. Run after updating shared navigation or guide content.
+- `scripts/generate-guides.py`: guide content and generation; updates the B-roll, self-hosting and MCP pages plus crawl files. Run after updating shared navigation or guide content.
 - `dist/guides/`: crawlable self-hosting and MCP guides.
 - `.openai/hosting.json`: Sites identity and static hosting configuration.
 - `vercel.json`: Vercel configuration; serves `dist/` with no build step and applies the same headers as `dist/_headers`.
 
-The demo uses six illustrative records and generated still imagery. It does not connect to a running Metachlorian backend, analyse uploads, or imply real permissions. The product screenshot is from the actual repository. Product facts and commands were checked against commit `2d07f6f9743848c526d66b106fb4d9cba8ea8bcb` on 4 October 2026.
+The demo uses six illustrative records and generated still imagery. It does not connect to a running Metachlorian backend, analyse uploads, or imply real permissions. The product screenshot is from the actual repository. Desktop asset URLs, architectures, sizes and first-launch requirements were checked against the published v0.1.0 release on 1 November 2026. Update the visible version, installer links and SoftwareApplication version together when a release changes. Source and Docker instructions remain available as alternatives.
+
+Privacy copy must distinguish local analysis from the separately controlled community index: new YouTube imports share machine metadata by default, including possible titles, transcripts and on-screen text. Do not replace this disclosure with an unqualified claim that nothing leaves the machine. Rights records are supplied by the user and do not independently establish legal permission.
 
 ## SEO and performance
 
-Three static HTML routes, unique titles/descriptions/canonicals, SoftwareApplication/WebSite/TechArticle/BreadcrumbList structured data, semantic headings, descriptive link text, sitemap and robots.txt. No invented reviews or ratings. Rich results and rankings are not guaranteed.
+Four static HTML routes, unique titles/descriptions/canonicals, SoftwareApplication/WebSite/TechArticle/BreadcrumbList structured data, real product screenshots for large social previews, semantic headings, descriptive link text, sitemap and robots.txt. No invented reviews or ratings. Rich results and rankings are not guaranteed.
 
 The initial artwork has responsive WebP variants (~85 KB mobile, ~257 KB desktop). Fonts are self-hosted; images below the fold are lazy loaded. The site's JavaScript compresses to roughly 3.5 KB gzip. Reduced motion is respected. Real-world Core Web Vitals still need measurement on the public deployment with actual traffic.
 
-The Sites deployment starts private. Search-engine indexing requires a public launch. When adding the production domain, update canonical/Open Graph URLs, the origin in `scripts/generate-guides.py`, sitemap and robots.txt. Then submit the sitemap in Search Console. Cache headers use a short asset lifetime because filenames are not content-hashed.
+The Vercel deployment uses `https://www.metachlorian.xyz` as the canonical origin. Canonical/Open Graph URLs, structured data, guide generation, sitemap and robots.txt use that origin consistently. Submit `https://www.metachlorian.xyz/sitemap.xml` in Search Console once ownership is verified and the domain serves the public site. Cache headers use a short asset lifetime because filenames are not content-hashed. Keep any Search Console verification file or tag in place after verification.
 
 ## Art and attribution
 
