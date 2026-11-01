@@ -8,7 +8,7 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "metachlorian.vercel.app" }],
+      "has": [{ "type": "host", "value": "metachlorian\\.vercel\\.app" }],
       "destination": "https://www.metachlorian.xyz/:path*",
       "permanent": true
     }
