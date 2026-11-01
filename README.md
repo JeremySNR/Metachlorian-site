@@ -1,6 +1,6 @@
 # Metachlorian website
 
-A static, responsive marketing site for [Metachlorian](https://github.com/JeremySNR/Metachlorian), with direct desktop downloads, an illustrated cinematic hero, local sample-library interactions, actual product screenshots, and three practical guides.
+A static, responsive marketing site for [Metachlorian](https://github.com/JeremySNR/Metachlorian), with direct desktop downloads, an illustrated cinematic hero, local sample-library interactions, actual product screenshots, and four practical guides covering video search and the Photos/Lightroom Classic source preview.
 
 Production origin: **https://www.metachlorian.xyz**. The apex domain redirects to this primary hostname in Vercel.
 
@@ -28,18 +28,20 @@ The static checker verifies internal links and anchors, assets, heading counts, 
 - `dist/index.html`: landing page and structured data.
 - `dist/styles.css`: shared responsive styles.
 - `dist/app.js`: deterministic sample-library demo and small interface interactions.
-- `scripts/generate-guides.py`: guide content and generation; updates the B-roll, self-hosting and MCP pages plus crawl files. Run after updating shared navigation or guide content.
-- `dist/guides/`: crawlable self-hosting and MCP guides.
+- `scripts/generate-guides.py`: guide content and generation; updates the B-roll, self-hosting, MCP and Lightroom Classic pages plus crawl files. Run after updating shared navigation or guide content.
+- `dist/guides/`: crawlable video and photo workflow guides.
 - `.openai/hosting.json`: Sites identity and static hosting configuration.
 - `vercel.json`: Vercel configuration; serves `dist/` with no build step and applies the same headers as `dist/_headers`.
 
-The demo uses six illustrative records and generated still imagery. It does not connect to a running Metachlorian backend, analyse uploads, or imply real permissions. The product screenshot is from the actual repository. Desktop asset URLs, architectures, sizes and first-launch requirements were checked against the published v0.1.0 release on 1 November 2026. Update the visible version, installer links and SoftwareApplication version together when a release changes. Source and Docker instructions remain available as alternatives.
+The demo uses six illustrative records and generated still imagery. It does not connect to a running Metachlorian backend, analyse uploads, or imply real permissions. The product screenshot is from the actual repository. Desktop asset URLs, architectures, sizes and first-launch requirements were checked against the published v0.2.0 release on 1 November 2026. Update the visible version, installer links and SoftwareApplication version together when a release changes. Source and Docker instructions remain available as alternatives.
+
+Photos and Lightroom Classic are a source preview, not part of those v0.2.0 installers. Keep that distinction in the homepage, guide and download area. Editing targets Classic 15.6 and awaits live macOS/Windows certification. The guide explains virtual copies, supported controls, manual handoffs, original-file reuse and the separate costs of the index, 256 MiB preview cache, shared models and Lightroom-owned data. Photo analysis is local; agent-requested previews are sent to the chosen agent. Do not describe the feature as zero-storage, universally compatible, or proven to improve every image.
 
 Privacy copy must distinguish local analysis from the separately controlled community index: new YouTube imports share machine metadata by default, including possible titles, transcripts and on-screen text. Do not replace this disclosure with an unqualified claim that nothing leaves the machine. Rights records are supplied by the user and do not independently establish legal permission.
 
 ## SEO and performance
 
-Four static HTML routes, unique titles/descriptions/canonicals, SoftwareApplication/WebSite/TechArticle/BreadcrumbList structured data, real product screenshots for large social previews, semantic headings, descriptive link text, sitemap and robots.txt. No invented reviews or ratings. Rich results and rankings are not guaranteed.
+Five static HTML routes, unique titles/descriptions/canonicals, SoftwareApplication/WebSite/TechArticle/BreadcrumbList structured data, product or brand imagery for large social previews, semantic headings, descriptive link text, sitemap and robots.txt. The dedicated photo guide addresses Lightroom Classic AI editing, Codex/MCP setup, family/portrait/travel selection and Smart Preview storage. No invented reviews or ratings. Rich results and rankings are not guaranteed.
 
 The initial artwork has responsive WebP variants (~85 KB mobile, ~257 KB desktop). Fonts are self-hosted; images below the fold are lazy loaded. The site's JavaScript compresses to roughly 3.5 KB gzip. Reduced motion is respected. Real-world Core Web Vitals still need measurement on the public deployment with actual traffic.
 
@@ -70,7 +72,7 @@ These are design references, not measured claims about those sites' conversion r
 
 ## Family identity and design system
 
-The approved logo is installed in the header/footer of all three pages. Its SVG embeds the original PNG unchanged; the compact mark and favicon use the same artwork with different viewports. See [the family design system](design-system/README.md) for exact-source verification, semantic tokens, marketing/library/editor profiles, accessibility contracts, component guidance and adoption in Metachlorian and Cutawan.
+The approved logo is installed in the header/footer of every page. Its SVG embeds the original PNG unchanged; the compact mark and favicon use the same artwork with different viewports. See [the family design system](design-system/README.md) for exact-source verification, semantic tokens, marketing/library/editor profiles, accessibility contracts, component guidance and adoption in Metachlorian and Cutawan.
 
 `dist/foundations.css` is generated from `design-system/tokens.json`. `dist/tokens.css` adapts those foundations for this site; `dist/family.css` applies shared identity and component rules. Keep these styles on generated guide pages by editing `scripts/generate-guides.py` as well.
 
